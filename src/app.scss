@@ -1,0 +1,350 @@
+
+$white-ish: #F2F2F2;
+$orange: #F96D00;
+$darkBlue:#1B435D;
+$gray: #5C636E;
+$black: #393E46;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
+
+html,body{
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    background-color: $black;
+    position: relative;
+}
+
+
+.home {
+    height: 100vh;
+    width: 100vw;
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    color: $white-ish;
+    overflow: hidden;
+    position: relative;
+    img {
+        z-index: 1;
+        width:25%;
+        max-width:250px;
+        margin-top: 2%;
+    }
+    .titleCard {
+        z-index: 1;
+        font-size: 3.5vh;
+        font-weight: 700;
+        letter-spacing: -2px;
+    }
+    a {
+        z-index: 1;
+        display: block;
+        height: 40px;
+        width: 40px;
+        margin-top: auto;
+        align-self: center;
+        margin-bottom: 5%;
+        animation: bumping 2s linear infinite alternate;
+    }
+    .arrow {
+        height: 40px;
+        width: 40px;
+        background-color: $white-ish;
+        -webkit-clip-path: polygon(50% 87%, 93% 48%, 100% 55%, 50% 100%, 0 55%, 8% 48%);
+        clip-path: polygon(50% 87%, 93% 48%, 100% 55%, 50% 100%, 0 55%, 8% 48%);
+    }
+    .orange {
+        color: $orange;
+    }
+}
+
+
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: $gray;
+    color:$white-ish;
+    z-index: 3;
+    height:45px;
+    font-size: 18px;
+    border-bottom: 2px solid $orange;
+    div {
+        margin-left: 1%;
+        margin-right:2%;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    a {
+        text-decoration: none;
+        color:$white-ish;
+        transition: .5s all;
+    }
+
+}
+
+.aboutProject {
+    background-color: $black;
+    display: grid;
+    height: 100vh;
+    font-weight: bold;
+    color:white;    
+    grid-template-rows: 1fr;
+    grid-template-columns: .5fr 1fr;
+    position: relative;
+    overflow: hidden;
+    ul {
+        list-style-type: none;
+    }
+    .project{
+        display: relative;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        h3, h2, h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 2em;
+        }        
+
+        .projectGrid {
+            height: 80%;
+            display: grid;
+            grid-template-columns:1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 1em;
+            margin-right: 2%;
+            .row1 {
+                grid-row: 1/2;
+                position: relative;
+                z-index: 2;
+                box-shadow: -6px 10px 5px 0px rgba(0,0,0,0.36);
+
+            }
+            .row2 {
+                grid-row: 2/3;
+                position: relative;
+                z-index: 2;
+                box-shadow: -6px 10px 5px 0px rgba(0,0,0,0.36);
+            }
+            img {
+                height: 100%;
+                width: 100%;
+                image-rendering: crisp-edges;
+                z-index: 0;                
+            }
+            .row1:hover .overlay1{
+                bottom: 0;
+                height: 100%;
+                box-shadow: 0 0 0 0 $gray;
+            }
+            .row2:hover .overlay2{
+                top:0;
+                height: 100%;
+                box-shadow: 0;
+            }
+
+            .overlay1 , .overlay2 {
+                position: absolute;
+                height: 0;
+                z-index: 1;
+                overflow:hidden;
+                bottom:100%;
+                left:0;
+                right:0;
+                top:0;
+                transition: 1s all cubic-bezier(1,.02,.62,.98);
+                background-color:$gray;
+
+                .skills{
+                    position: absolute;
+                    text-align: center;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -40%);
+                    -ms-transform: translate(-50%, -40%);
+                    span {
+                        font-weight: 300;
+                        color: $orange;
+                    }
+                }
+                .learnMore {
+                    position: absolute;
+                    top:70%;
+                    left: 50%;
+                    font-size: 1.2em;
+                    font-weight: 700;
+                    transform: translate(-50%, -40%);
+                    -ms-transform: translate(-50%, -40%);
+                    background: transparent;
+                    color: $white-ish;
+                    border: 1px solid $orange;
+                    transition: .5s all;
+                    cursor: pointer;
+                }
+                .learnMore:hover {
+                    background: $orange;
+                }
+            }
+            .overlay2 {
+                bottom: 0;
+                top:100%;
+            }
+        }
+    }
+    .about{
+        grid-column: 1/2;
+        grid-row: 1/4;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 5%;
+    }
+    .img {
+        height: 100%;
+        width: 100%;
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 100%;
+        border: 2px solid $white-ish;
+    }
+    .bio {
+
+        h3 {
+            text-decoration: underline;
+        }
+        font-weight: 300;
+        font-size: 1.2em;
+        background-color: $darkBlue;
+        padding: 3%;
+        margin-top: 2%;
+        -webkit-box-shadow: 0px 8px 13px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 8px 13px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 8px 13px 0px rgba(0,0,0,0.75);
+    }
+}
+.contact {
+    padding-left: 30%;
+    padding-right: 30%;
+    min-height: 300px;
+    color:white;
+    text-align: center;
+    border-top: 2px solid $orange;
+    background-color: $darkBlue;
+    h2 {
+        text-decoration: underline;
+    }
+    input, textarea {
+        border: 1px solid $gray;
+        width: 100%;
+        padding: .3em;
+        background: $black;
+        margin-bottom: .3em;
+    }    
+
+    input[type=email]{
+        color:white;
+        font-family: 'Open Sans', sans-serif;
+    }
+    textarea {
+        overflow: auto;
+        height: 10.3em;
+        color: $white-ish;
+        font-family: 'Open Sans', sans-serif;
+    }
+    button {
+        float: right;
+        border: 1px solid $orange;
+        background: transparent;
+        font-size: 1.2em;
+        color: $white-ish;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        transition: 1s all;
+    }
+    button:hover {
+        background: $white-ish;
+        color: $black;
+    }
+}
+
+footer {
+    background-color:$white-ish;
+    padding: 4px;
+    height: 32px;
+    .icons {
+        margin: 0 auto;
+        max-width: 200px;
+    }
+    a {
+        padding-left: 5%;
+        margin: 5%;
+        color: $darkBlue;
+        transition:.5s all;
+        text-decoration: none;
+    }
+}
+
+a:hover {
+    color: $orange;
+}
+
+#blog:after {
+    content: "Blog";
+}
+
+#blog:hover:after{
+    content:"Coming soon!";
+}
+
+.fixed {
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+.fixHeight {
+    margin-top: 45px;
+}
+
+
+@keyframes bumping {
+    0% { margin-bottom: 5%}
+    100% { margin-bottom: 4%}
+}
+
+.canvas {
+    z-index: -0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+}
+
+
+@media (max-width: 750px){
+    .aboutProject {
+        display: flex;
+        flex-direction: column;
+        height: 470vh;
+        .img {
+            align-self: center;
+        }
+        .project {
+            .projectGrid{
+                display: flex;
+                flex-direction: column;
+                height: 10%;
+                img {
+                    min-height: 380px;
+                    height: 380px;
+                }
+            }
+        }
+    }
+}
