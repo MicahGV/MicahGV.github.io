@@ -13,6 +13,9 @@ html,body{
     position: relative;
 }
 
+body {
+    margin:0;
+}
 
 .home {
     height: 100vh;
@@ -137,6 +140,7 @@ html,body{
                 width: 100%;
                 image-rendering: crisp-edges;
                 z-index: 0;                
+                object-fit: cover;                
             }
             .row1:hover .overlay1{
                 bottom: 0;
